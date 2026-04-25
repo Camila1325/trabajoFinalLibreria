@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import clsx from "clsx";
 import Card from "@material-ui/core/Card";
 import CardHeader from "@material-ui/core/CardHeader";
 import CardMedia from "@material-ui/core/CardMedia";
@@ -92,9 +91,7 @@ export default function Books({
             <p>&#11088;</p>
           ))}
         <IconButton
-          className={clsx(classes.expand, {
-            [classes.expandOpen]: expanded
-          })}
+          className={`${classes.expand} ${expanded ? classes.expandOpen : ""}`}
           onClick={handleExpandClick}
           aria-expanded={expanded}
           aria-label="show more"
